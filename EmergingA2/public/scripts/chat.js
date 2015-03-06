@@ -1,12 +1,21 @@
-﻿console.log("This is char.js");
-var socket = io();
-'use strict';
-var chatApp = angular.modual('chatApp', []);
+﻿'use strict';
+var chatApp = angular.module('chatApp', []);
 
-
-
-chatApp.controller('chatCtrl', ['$scope', 'socket'],
-    function ($scope, socket)
-{
-     
+chatApp.factory('socket', function (socket) {
+     socket = io.connect('http://localhost:3000');
+    return socket;
 });
+
+chatApp.controller('chatCtrl', ['$scope', 'socket',
+    function ($scope, socket) {
+        $scope.msgs=[];
+        $scope.sendMsg = function () {
+            socket.emit('send message', $scope.msg.text);
+            $scope.msg.text='';
+        };
+
+        socket.on('get message', function (data) {
+            $scope.msgs.push(data);
+            $scope.$digest();
+        })
+    }]);
