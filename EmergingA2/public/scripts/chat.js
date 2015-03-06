@@ -1,8 +1,8 @@
 ﻿'use strict';
 var chatApp = angular.module('chatApp', []);
 
-chatApp.factory('socket', function (socket) {
-     socket = io.connect('http://localhost:3000');
+chatApp.factory('socket', function () {
+    var socket = io.connect('http://localhost:3000');
     return socket;
 });
 
