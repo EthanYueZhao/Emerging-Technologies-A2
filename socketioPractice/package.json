@@ -1,0 +1,14 @@
+{
+  "name": "socketioPractice",
+  "version": "0.0.0",
+  "description": "socketioPractice",
+  "main": "server.js",
+  "author": {
+    "name": "Yue",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "4.*",
+    "socket.io": "^1.3.5"
+  }
+}
