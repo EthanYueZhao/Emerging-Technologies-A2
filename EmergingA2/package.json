@@ -8,7 +8,9 @@
     "email": ""
   },
   "dependencies": {
+    "bootstrap": "^3.3.2",
     "express": "4.*",
-    "socket.io": "^1.3.5"
+    "socket.io": "^1.3.5",
+    "angular": "*"
   }
 }
