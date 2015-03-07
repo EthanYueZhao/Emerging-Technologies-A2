@@ -8,10 +8,12 @@ chatApp.factory('socket', function () {
 
 chatApp.controller('chatCtrl', ['$scope', 'socket',
     function ($scope, socket) {
-        $scope.msgs=[];
+        $scope.msgs = [];
         $scope.sendMsg = function () {
-            socket.emit('send message', $scope.msg.text);
-            $scope.msg.text='';
+            var clientMsg =  $scope.msg.text + '     sent time: ' + new Date().toString();
+            socket.emit('send message', clientMsg);
+            $scope.msgs.push(clientMsg);
+            $scope.msg.text = '';
         };
 
         socket.on('get message', function (data) {
