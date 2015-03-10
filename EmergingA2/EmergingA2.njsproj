@@ -32,16 +32,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="public\scripts\chat.js" />
+    <Compile Include="public\scripts\libs\angular-route.js" />
+    <Compile Include="public\scripts\libs\angular.js" />
     <Compile Include="server.js" />
     <Content Include="public\css\chat.css" />
     <Content Include="public\index.html" />
     <Content Include="package.json" />
+    <Content Include="public\partial\chat.html" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\css\" />
     <Folder Include="public\" />
+    <Folder Include="public\partial\" />
     <Folder Include="public\scripts\" />
+    <Folder Include="public\scripts\libs\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

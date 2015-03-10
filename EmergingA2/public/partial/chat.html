@@ -1,0 +1,17 @@
+﻿<div class="container">
+    <h1>Welcome to chat room</h1>
+
+
+    <ul id="messages">
+        <li ng-repeat="msg in msgs track by $index">
+            <p>{{msg}}</p>
+        </li>
+    </ul>
+    <form ng-submit="sendMsg()">
+
+        <lable>Message:</lable>
+        <input type="text" ng-model="msg.text" autocomplete="off" ng-required="true" class="inputMessage" />
+        <button type="submit" class="btn btn-primary">Send</button>
+
+    </form>
+</div>
